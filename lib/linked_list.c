@@ -85,7 +85,7 @@ void clear_and_free_linked_list(LinkedList *list) {
  */
 void ll_add_front(LinkedList *list, Movie *movie) {
     node *new_node = __ll__new_node(movie);
-    if (list->size == NULL) {
+    if (list->head == NULL) {
         // empty list
         list->head = new_node;
         list->tail = new_node;
@@ -109,7 +109,7 @@ void ll_add_front(LinkedList *list, Movie *movie) {
  */
 void ll_add_back(LinkedList *list, Movie *movie) {
     node *new_node = __ll__new_node(movie);
-    if (list->size == NULL) {
+    if (list->head == NULL) {
         // empty list
         list->head = new_node;
         list->tail = new_node;
@@ -196,7 +196,7 @@ Movie * ll_remove_front(LinkedList *list) {
  * @return the movie that was removed
  */
 Movie * ll_remove_back(LinkedList *list) {
-    if (list->size == NULL) {
+    if (list->head == NULL) {
         return NULL; // empty list
     }
     Movie *movie = list->tail->movie; // get the movie to return
