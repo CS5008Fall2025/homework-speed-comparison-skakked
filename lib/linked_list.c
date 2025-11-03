@@ -1,9 +1,9 @@
 /**
  * Singly linked list implementation.
  *
- * @author: STUDENT ADD YOUR NAME
+ * @author: Siddharth Kakked
  * @class: CS 5008
- * @term: UPDATE WITH CURRENT SEMESTER
+ * @term: Fall 2025 
  */
 
 #include <stdlib.h>
@@ -84,7 +84,17 @@ void clear_and_free_linked_list(LinkedList *list) {
  * @param movie the movie to add
  */
 void ll_add_front(LinkedList *list, Movie *movie) {
-    // STUDENT TODO: Implement
+    node *new_node = __ll__new_node(movie);
+    if (list->size == NULL) {
+        // empty list
+        list->head = new_node;
+        list->tail = new_node;
+    } else {
+        // non-empty list
+        new_node->next = list->head;
+        list->head = new_node;
+    }
+    list->size++;
 }
 
 /**
@@ -98,7 +108,17 @@ void ll_add_front(LinkedList *list, Movie *movie) {
  * @param movie the movie to add
  */
 void ll_add_back(LinkedList *list, Movie *movie) {
-    // STUDENT TODO: Implement
+    node *new_node = __ll__new_node(movie);
+    if (list->size == NULL) {
+        // empty list
+        list->head = new_node;
+        list->tail = new_node;
+    } else {
+        // non-empty list
+        list->tail->next = new_node;
+        list->tail = new_node;
+    }
+    list->size++;
 }
 
 
@@ -114,7 +134,30 @@ void ll_add_back(LinkedList *list, Movie *movie) {
  * @param n the index to insert at
  */
 void ll_insert(LinkedList *list, Movie *movie, int n) {
-   // STUDENT TODO: Implement
+   // Bounds Check
+    if (n < 0 || n > list->size) {
+         return;
+    }
+    // Special Cases
+    if (n == 0) {
+        ll_add_front(list, movie);
+        return;
+    }
+    if (n == list->size) {
+        ll_add_back(list, movie);
+        return;
+    }
+    // General Case
+    node *new_node = __ll__new_node(movie);
+    node *curr = list->head;
+    // Move to node before insertion point
+    for (int i = 0; i < n - 1; i++) {
+        curr = curr->next;
+    }
+    // Insert bewtween curr and curr->next
+    new_node->next = curr->next;
+    curr->next = new_node;
+    list->size++;
 }
 
 
@@ -129,8 +172,12 @@ void ll_insert(LinkedList *list, Movie *movie, int n) {
  */
 Movie * ll_remove_front(LinkedList *list) {
     Movie *movie = NULL;
+    if (list->size == 0) {
+        return NULL; // empty list
+    }
     
-    // STUDENT TODO: Implement
+    
+    
 
     return movie;
 }
