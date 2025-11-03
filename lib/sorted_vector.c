@@ -53,9 +53,24 @@ void add_to_sorted_vector(SortedMovieVector * vector, Movie * movie) {
  * @return the movie if found, NULL otherwise
  */
 Movie * find_in_sorted_vector(SortedMovieVector * vector, const char * title) {
-    // STUDENT TODO: implement this function
-
-    // if the movie is not found, return NULL
+    int left = 0; // left index
+    int right = vector->size - 1; // right index
+    
+    while (left <= right) { // while there is a range to search
+        int mid = left + (right - left) / 2;
+        int cmp = strcasecmp(title, vector->movies[mid]->title);
+        
+        if (cmp == 0) { 
+            // Found
+            return vector->movies[mid];
+        } else if (cmp < 0) {
+            // Search in left half
+            right = mid - 1;
+        } else {
+            // Search in right half
+            left = mid + 1;
+        }
+    }
     return NULL;
 }
 
