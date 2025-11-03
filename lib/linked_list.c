@@ -318,11 +318,14 @@ bool ll_is_empty(LinkedList *list) {
  */
 char* ll_to_str(LinkedList *list) {
     
-    char *str = (char *)malloc(sizeof(char) * (MAX_MOVIE_STR_LEN + 3) * list->size);
+    
     if (list->size == 0) {
+        char *str = (char *)malloc(3);
         strcpy(str, "[]");
         return str; // early exit
     }
+    // For non-empty lists, declare and allocate str HERE
+    char *str = (char *)malloc(sizeof(char) * (MAX_MOVIE_STR_LEN + 3) * list->size);
     // implied else
     strcpy(str, "[");
     node *curr = list->head;

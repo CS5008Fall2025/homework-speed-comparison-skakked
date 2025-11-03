@@ -202,6 +202,7 @@ bool vector_is_empty(MovieVector *vector) {
 char *vector_to_str(MovieVector *vector) {
     char *str = (char *)malloc(sizeof(char) * (MAX_MOVIE_STR_LEN + 3) * vector->size);
     if (vector->size == 0){
+         char *str = (char *)malloc(3);
         strcpy(str, "[]");
         return str; // early exit
     }
