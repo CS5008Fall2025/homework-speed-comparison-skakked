@@ -210,6 +210,7 @@ BSTNode * __bst__find(BSTNode * curr, const char * title) {
    } else if (cmp > 0) {
        return __bst__find(curr->right, title); // search right
    }
+    return NULL; // not found
 }
 
 /**
