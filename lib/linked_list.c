@@ -233,9 +233,30 @@ Movie * ll_remove_back(LinkedList *list) {
  * @return the movie that was removed
  */
 Movie * ll_remove(LinkedList *list, int n) {
-    Movie * movie = NULL;
-    // STUDENT TODO: Implement
-    return movie;
+    // Bounds Check
+    if (n < 0 || n >= list->size) {
+        return NULL;
+    }
+    // Special Cases
+    if (n == 0) {
+        return ll_remove_front(list);
+    }
+    if (n == list->size - 1) {
+        return ll_remove_back(list);
+    }
+    // General Case
+    node *curr = list->head;
+    // Move to node before removal point
+    for (int i = 0; i < n - 1; i++) {
+        curr = curr->next;
+    }
+    // curr is now the node before the one to be removed
+    node *to_remove = curr->next;
+    Movie *movie = to_remove->movie; // get the movie to return
+    curr->next = to_remove->next; // bypass the node to be removed
+    free(to_remove); // free the removed node
+    list->size--; // decrement size
+    return movie; // return the removed movie
 }
 
 /**
