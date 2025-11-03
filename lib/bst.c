@@ -272,8 +272,13 @@ char * __bst__update_str(Movie * movie, char * str) {
  * @return the string that was appended to
 */
 char * __bst__to_str_postorder(BSTNode * curr, char * str) {
-    
-    return str;
+    if (curr == NULL) {
+        return str;
+    }
+    str = __bst__to_str_postorder(curr->left, str); // traverse left
+    str = __bst__to_str_postorder(curr->right, str); // traverse right
+    str = __bst__update_str(curr->movie, str); // visit node
+    return str; // return the updated string
 }
 
 /**
