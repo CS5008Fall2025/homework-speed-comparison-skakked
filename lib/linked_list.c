@@ -171,15 +171,19 @@ void ll_insert(LinkedList *list, Movie *movie, int n) {
  * @return the movie that was removed
  */
 Movie * ll_remove_front(LinkedList *list) {
-    Movie *movie = NULL;
     if (list->size == 0) {
         return NULL; // empty list
     }
-
-    
-    
-
-    return movie;
+    node *temp = list->head; // store the node to be removed
+    Movie *movie = temp->movie; // get the movie to return
+    list->head = list->head->next; // update head pointer
+    // If list is now empty, update tail pointer
+    if (list->head == NULL) {
+        list->tail = NULL;
+    }
+    free(temp); // free the removed node
+    list->size--; // decrement size
+    return movie; // return the removed movie
 }
 
 /**
@@ -192,9 +196,29 @@ Movie * ll_remove_front(LinkedList *list) {
  * @return the movie that was removed
  */
 Movie * ll_remove_back(LinkedList *list) {
-    Movie* movie = NULL;
-    // STUDENT TODO: Implement
-    return movie;
+    if (list->size == NULL) {
+        return NULL; // empty list
+    }
+    Movie *movie = list->tail->movie; // get the movie to return
+    if (list->head == list->tail) {
+        // only one item in the list
+        free(list->head);
+        list->head = NULL;
+        list->tail = NULL;
+    } else {
+        // more than one item in the list
+        node *curr = list->head;
+        // traverse to the second last node
+        while (curr->next != list->tail) {
+            curr = curr->next;
+        }
+        free(list->tail); // free the last node
+        curr->next = NULL; // update second last node's next pointer
+        list->tail = curr; // update tail pointer
+    }
+
+    list->size--; // decrement size
+    return movie; // return the removed movie
 }
 
 /**
