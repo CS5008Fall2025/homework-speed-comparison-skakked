@@ -210,7 +210,6 @@ BSTNode * __bst__find(BSTNode * curr, const char * title) {
    } else if (cmp > 0) {
        return __bst__find(curr->right, title); // search right
    }
-
 }
 
 /**
@@ -273,7 +272,7 @@ char * __bst__update_str(Movie * movie, char * str) {
  * @return the string that was appended to
 */
 char * __bst__to_str_postorder(BSTNode * curr, char * str) {
-    // STUDENT TODO: implement this function
+    
     return str;
 }
 
@@ -289,8 +288,13 @@ char * __bst__to_str_postorder(BSTNode * curr, char * str) {
  *
  */
 char * __bst__to_str_preorder(BSTNode * curr, char * str) {
-    // STUDENT TODO: implement this function
-    return str;
+    if (curr == NULL) {
+        return str;
+    }
+    str = __bst__update_str(curr->movie, str); // visit node
+    str = __bst__to_str_preorder(curr->left, str); // traverse left
+    str = __bst__to_str_preorder(curr->right, str); // traverse right
+    return str; // return the updated string
 }
 
 /**
