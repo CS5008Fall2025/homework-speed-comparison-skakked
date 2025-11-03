@@ -91,7 +91,21 @@ void clear_and_free_bst(BST * bst) {
  * @param movie the movie to add 
 */
 void __bst__add(BSTNode * curr, Movie * movie) {
-   // STUDENT TODO: implement this function
+   // Compare the movie to the current node's movie
+   int cmp = compare_movies(movie, curr->movie);
+   if (cmp < 0) { // movie to left
+         if (curr->left == NULL) {
+              curr->left = __bst__new_node(movie);
+         } else {
+              __bst__add(curr->left, movie);
+         }
+    } else { // movie to right
+         if (curr->right == NULL) {
+              curr->right = __bst__new_node(movie);
+         } else {
+              __bst__add(curr->right, movie);
+         }
+    }
 }
 /**
  * Adds the given movie into the BST. 
