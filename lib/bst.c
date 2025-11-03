@@ -323,7 +323,6 @@ char * __bst__to_str_inorder(BSTNode * curr, char * str) {
     return str; // return the updated string
 }
 
-
 /**
  * Helper function for converting a BST to a string using breadth first traversal.
  * 
@@ -401,7 +400,13 @@ char * bst_to_str(BST * tree, int traversal) {
  * 
 */
 void __bst__to_sorted_array(BSTNode * curr, Movie ** array, int * index) {
-    // STUDENT TODO: implement this function
+    if (curr == NULL){
+        return;
+    }
+    __bst__to_sorted_array(curr->left, array, index); // traverse left
+    array[*index] = curr->movie; // visit node
+    (*index)++; // increment index
+    __bst__to_sorted_array(curr->right, array, index); // traverse right
 }
 
 /**
