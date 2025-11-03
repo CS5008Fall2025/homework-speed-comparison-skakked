@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 # Report for Data Structure Speed Comparison Homework
 
 Make sure to answer every question in this homework. You should not bullet point your answers, but
