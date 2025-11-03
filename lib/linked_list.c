@@ -157,7 +157,7 @@ void ll_insert(LinkedList *list, Movie *movie, int n) {
     // Insert bewtween curr and curr->next
     new_node->next = curr->next;
     curr->next = new_node;
-    list->size++;
+    list->size++; 
 }
 
 
@@ -175,7 +175,7 @@ Movie * ll_remove_front(LinkedList *list) {
     if (list->size == 0) {
         return NULL; // empty list
     }
-    
+
     
     
 
