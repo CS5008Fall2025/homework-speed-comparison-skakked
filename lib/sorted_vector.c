@@ -90,7 +90,23 @@ Movie * find_in_sorted_vector(SortedMovieVector * vector, const char * title) {
  * @return the movie removed, NULL otherwise
  */
 Movie* sorted_vector_remove(SortedMovieVector *vector, const char *title){
-    // STUDENT TODO: implement this function
-
+    int left = 0;
+    int right = vector->size - 1;
+    
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        int cmp = strcasecmp(title, vector->movies[mid]->title);
+        
+        if (cmp == 0) {
+            // Found it! Remove and return
+            return vector_remove(vector, mid);
+        } else if (cmp < 0) {
+            // Search in left half
+            right = mid - 1;
+        } else {
+            // Search in right half
+            left = mid + 1;
+        }
+    }
     return NULL; // not found
 }
