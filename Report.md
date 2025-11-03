@@ -1,10 +1,6 @@
-
-
-
-
-
-
-
+Siddharth Kakked
+CS 5008
+Fall 2025
 
 # Report for Data Structure Speed Comparison Homework
 
@@ -22,15 +18,16 @@ Don't forget to use latex math notation (example in the table).
 
 ### Big $O$ Table
 
-| -                         | Add/Insert | Remove | Search/Find | Sort   | Add Front | Add Back | Remove Front | Remove Back | Get by Index |
-| ------------------------- |:----------:|:------:|:-----------:|:------:|:---------:|:--------:|:------------:|:-----------:|:------------:|
-| Vector                    | $O(n)$     |        |             |        |           |          |              |             |              |
-| Single Linked List        |            |        |             |        |           |          |              |             |              |
-| Double Linked List        |            |        |             |        |           |          |              |             |              |
-| Sorted Vector             |            |        |             | $O(1)$ | ---       | ---      | ---          | ---         | ---          |
-| Sorted Single Linked List |            |        |             | $O(1)$ | ---       | ---      | ---          | ---         | ---          |
-| Sorted Double Linked List |            |        |             | $O(1)$ | ---       | ---      | ---          | ---         | ---          |
-| Binary Search Tree        |            |        |             |        | ---       | ---      | ---          | ---         | ---          |
+| -                         | Add/Insert        | Remove            | Search/Find       | Sort              | Add Front    | Add Back     | Remove Front | Remove Back  | Get by Index |
+| ------------------------- |:-----------------:|:-----------------:|:-----------------:|:-----------------:|:------------:|:------------:|:------------:|:------------:|:------------:|
+| Vector                    | $O(n)$            | $O(n)$            | $O(n)$            | $O(n \log n)$     | $O(n)$       | $O(1)^*$     | $O(n)$       | $O(1)$       | $O(1)$       |
+| Single Linked List        | $O(n)$            | $O(n)$            | $O(n)$            | $O(n \log n)$     | $O(1)$       | $O(1)$       | $O(1)$       | $O(n)$       | $O(n)$       |
+| Double Linked List        | $O(n)$            | $O(n)$            | $O(n)$            | $O(n \log n)$     | $O(1)$       | $O(1)$       | $O(1)$       | $O(1)$       | $O(n)$       |
+| Sorted Vector             | $O(n)$            | $O(n)$            | $O(\log n)$       | $O(n)$            | ---          | ---          | ---          | ---          | ---          |
+| Sorted Single Linked List | $O(n)$            | $O(n)$            | $O(n)$            | $O(n)$            | ---          | ---          | ---          | ---          | ---          |
+| Sorted Double Linked List | $O(n)$            | $O(n)$            | $O(n)$            | $O(n)$            | ---          | ---          | ---          | ---          | ---          |
+| Binary Search Tree        | $O(\log n)^{**}$  | $O(\log n)^{**}$  | $O(\log n)^{**}$  | $O(n)$            | ---          | ---          | ---          | ---          | ---          |
+
 
 For Sort, we are asking for the Big $O$ for taking the current data structure and writing it 'sorted' to a file. However, not the file writes. For example, if you have a vector of 1000 elements, and you want to write it to a file, you would need to sort it first. So, the Big $O$ for this would be the Big $O$ for sorting. For BST, you have to convert the tree to a sequential structure, so the cost of doing that.  
 
