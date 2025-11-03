@@ -309,8 +309,13 @@ char * __bst__to_str_preorder(BSTNode * curr, char * str) {
  * @return the string that was appended to
 */
 char * __bst__to_str_inorder(BSTNode * curr, char * str) {
-    // STUDENT TODO: implement this function
-    return str;
+    if (curr == NULL) {
+        return str;
+    }
+    str = __bst__to_str_inorder(curr->left, str); // traverse left
+    str = __bst__update_str(curr->movie, str); // visit node
+    str = __bst__to_str_inorder(curr->right, str); // traverse right
+    return str; // return the updated string
 }
 
 
