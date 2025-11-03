@@ -24,7 +24,17 @@
  * @param movie the movie to add
 */
 void add_to_sorted_vector(SortedMovieVector * vector, Movie * movie) {
-    // STUDENT TODO: implement this function
+    // Find the correct insertion index
+     for (int i = 0; i < vector->size; i++) {
+        if (compare_movies(movie, vector->movies[i]) < 0) {
+            // Found the position
+            vector_insert(vector, movie, i);
+            return;
+        }
+    }
+    // If we get here, movie is greater than all existing movies
+    // Insert at the end
+    vector_insert(vector, movie, vector->size);
 }
 
 /**
