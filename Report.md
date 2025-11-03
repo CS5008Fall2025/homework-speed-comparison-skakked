@@ -48,8 +48,9 @@ Since the worst case can change considerably based on what sort you use for sort
 There are a few functions whose worse case is very different than the average case. Name at least two of them, and explain why the worse case is so much worse than the average case. 
 
 1. Binary Search Tree Operations (Add/Remove/Search)
-   Average Case: $O(log n)$ Worst Case: $O(n)$
-   
+   Average Case: $O(log n)$ 
+   Worst Case: $O(n)$
+
 2. 
 
 ## Empirical Analysis - Speed Comparison
