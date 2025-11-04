@@ -149,6 +149,7 @@ For example:
 
 4. What data structure is the fastest at searching? Why do you think that is?
    
+   
 
 5. What data structure is the fastest for adding elements to the front? Why do you think that is?
 
