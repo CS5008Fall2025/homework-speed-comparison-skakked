@@ -53,9 +53,16 @@ There are a few functions whose worse case is very different than the average ca
    
    Worst Case: $O(n)$
 
-   Binary Search Tree operations (add, remove, and search) achieve $O(log n)$ complexity in the average case when the tree is balanced. However, the worst case degrades to $O(n)$ when inserting already-sorted data like 1, 2, 3, 4, 5, which creates a completely unbalanced tree resembling a linked list. This forces operations to traverse all n nodes instead of just the logarithmic height.
+   Binary Search Tree operations (add, remove, and search) achieve $O(log n)$ complexity in the average case when the tree is balanced. However, the worst case slows to $O(n)$ when inserting already-sorted data like 1, 2, 3, 4, 5, which creates a completely unbalanced tree resembling a linked list. This causes operations to traverse all n nodes instead of just the logarithmic height.
 
-2. 
+2. Quicksort 
+
+   Average Case: $O(n log n)$
+
+   Worst Case: $O(n^2)$
+
+   When the pivot selections result in relatively balanced partitions, the recursion tree has logarithmic depth with O(n) work at each level and when the pivot is consistently the smallest or largest element, the partitions become extremely unbalanced. This creates a recursion depth of n with O(n) work at each level, resulting in quadratic time.
+
 
 ## Empirical Analysis - Speed Comparison
 
