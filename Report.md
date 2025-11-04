@@ -134,15 +134,18 @@ For example:
 1. What is the most surprising result from the data? Why is it surprising?
    Answer here
 ```
-```markdown
+
 1. What is the most surprising result from the data? Why is it surprising?
    
-   The most surprising result is how closely the Sorted Vector and Sorted Linked List perform for insertion operations, despite their very different internal structures. This is surprising because, in theory, a linked list should benefit from O(1) insertions once the position is found, whereas a vector (array) requires O(n) shifting of elements. However, in both structures, the dominant cost comes from finding the correct sorted position (O(n)), so the structural advantage of the linked list doesn’t meaningfully improve total insertion time at these data sizes.
-```
+   The most surprising result is how closely the Sorted Vector and Sorted Linked List perform for insertion operations, despite their very different internal structures. This is surprising because, in theory, a linked list should benefit from $O(1)$ insertions once the position is found, whereas a vector (array) requires $O(n)$ shifting of elements. However, in both structures, the dominant cost comes from finding the correct sorted position $(O(n))$, so the structural advantage of the linked list doesn’t meaningfully improve total insertion time at these data sizes.
 
 2. What data structure is the fast at adding elements (sorted)? Why do you think that is?
+   The Binary Search Tree (BST) is the fastest at adding elements when maintaining sorted order. A balanced BST can insert elements in approximately $O(log n)$ time because it uses structural ordering rather than searching through all elements. The vector and linked list both require a linear search $(O(n))$ to find the correct insertion point, making them slower as $n$ increases.
+
 
 3. What data structure is the fastest at removing elements (sorted)? Why do you think that is?
+   The BST is also the fastest at removing elements in sorted order.Removal in a balanced BST typically involves O(log n) search and local restructuring. In contrast, vectors require shifting elements (O(n)), and linked lists require traversal to find the target node (O(n)), even though the removal itself is O(1) once found.
+
 
 4. What data structure is the fastest at searching? Why do you think that is?
 
