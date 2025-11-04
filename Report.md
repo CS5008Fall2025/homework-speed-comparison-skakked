@@ -146,10 +146,14 @@ For example:
 
 3. What data structure is the fastest at removing elements (sorted)? Why do you think that is?
 
-   The BST is also the fastest at removing elements in sorted order.Removal in a balanced BST typically involves O(log n) search and local restructuring. In contrast, vectors require shifting elements (O(n)), and linked lists require traversal to find the target node (O(n)), even though the removal itself is O(1) once found.
+   The BST is also the fastest at removing elements in sorted order. Removal in a balanced BST typically involves $O(log n)$ search and local restructuring. In contrast, vectors require shifting elements $(O(n))$, and linked lists require traversal to find the target node $(O(n))$, even though the removal itself is $O(1)$ once found.
 
 
 4. What data structure is the fastest at searching? Why do you think that is?
+
+   
+
+
 
    
 
