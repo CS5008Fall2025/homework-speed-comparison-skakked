@@ -67,14 +67,15 @@ There are a few functions whose worse case is very different than the average ca
 ## Empirical Analysis - Speed Comparison
 
 For this section, you will need to have run the speed compare program and generated the output into a CSV file.
-   > CSV file 10k: [results_10k.csv](https://github.com/CS5008Fall2025/homework-speed-comparison-skakked/blob/main/results_10k.csv)
-
-   > CSV file 100k: [results_100k.csv](https://github.com/CS5008Fall2025/homework-speed-comparison-skakked/blob/main/results_1000000.csv)
 
 ### Empirical Results Table
 
 Add a link from this document to the CSV file you generated. The CSV file must have at least 15 different N values, but
-often can have a lot more depending on what you ran.  
+often can have a lot more depending on what you ran. 
+
+  > CSV file 10k: [results_10k.csv](https://github.com/CS5008Fall2025/homework-speed-comparison-skakked/blob/main/results_10k.csv)
+
+   > CSV file 100k: [results_100k.csv](https://github.com/CS5008Fall2025/homework-speed-comparison-skakked/blob/main/results_1000000.csv)
 
 ### Analysis
 
