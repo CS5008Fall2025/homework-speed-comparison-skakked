@@ -155,9 +155,10 @@ For example:
 
 5. What data structure is the fastest for adding elements to the front? Why do you think that is?
 
-   
+   Linked List is the fastest for adding elements to the front, requiring only 0.006 seconds at N = 99,999 compared to 3.65 seconds for Vector. This is because a linked list simply allocates a new node and updates a single head pointer (an $O(1)$ operation).
 
 6. What data structure is the fastest for adding elements to the back? Why do you think that is?
+   
 
 7. What data structure is the fastest for removing elements from the front? Why do you think that is?
 
