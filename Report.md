@@ -168,7 +168,7 @@ For example:
 
 8. What data structure is the fastest for removing elements from the back? Why do you think that is?
 
-   The Vector is the fastest data structure for removing elements from the back, taking 0.00027 seconds at N = 99,999 compared to the Linked List’s 32.30 seconds. This is because removing the last element from a vector is an $O(1)$ operation. It decrements the size counter without shifting or reallocating memory.
+   The Vector is the fastest data structure for removing elements from the back, taking 0.00027 seconds at N = 99,999 compared to the Linked List’s 32.30 seconds. This is because removing the last element from a vector is an $O(1)$ operation. It decrements the size counter without reallocating memory.
 
 
 
