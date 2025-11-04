@@ -158,11 +158,19 @@ For example:
    Linked List is the fastest for adding elements to the front, requiring only 0.006 seconds at N = 99,999 compared to 3.65 seconds for Vector. This is because a linked list simply allocates a new node and updates a single head pointer (an $O(1)$ operation).
 
 6. What data structure is the fastest for adding elements to the back? Why do you think that is?
-   
+
+   Vector slightly outperforms the Linked List for adding to the back, taking 0.0007 seconds versus 0.0015 seconds at N = 99,999. Both structures support amortized $O(1)$ insertion, but vectors benefit from contiguous memory, which improves cache efficiency and allows quick appends until a resize is required.
+
 
 7. What data structure is the fastest for removing elements from the front? Why do you think that is?
 
+   Linked List is fastest for removing elements from the front, taking 0.004 seconds at N = 99,999 compared to 3.94 seconds for Vector. The list simply updates its head pointer and frees the first node (an $O(1)$ operation). Vectors, however, must shift all remaining elements left, performing n – 1 copy operations, making this an $O(n)$ task.
+
 8. What data structure is the fastest for removing elements from the back? Why do you think that is?
+
+   The Vector is the fastest data structure for removing elements from the back, taking 0.00027 seconds at N = 99,999 compared to the Linked List’s 32.30 seconds. This is because removing the last element from a vector is an $O(1)$ operation. It decrements the size counter without shifting or reallocating memory.
+
+
 
 ### Deeper Thinking
 
