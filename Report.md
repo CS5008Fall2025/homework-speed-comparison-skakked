@@ -36,8 +36,8 @@ For Sort, we are asking for the Big $O$ for taking the current data structure an
 Since the worst case can change considerably based on what sort you use for sorting (if any), list each algorithm below, and specify the algorithm used in your assumption.  For BST, write which  method of traversal you would use to sort it.  
 
 * Vector: $O(nlogn)$ (mergesort)
-* Single Linked List: $O(nlogn)$ (mergesort)
-* Double Linked List: $O(nlogn)$ (mergesort)
+* Single Linked List: $O(n log n)$ (mergesort)
+* Double Linked List: $O(n log n)$ (mergesort)
 * Sorted Vector - already sorted: $O(n)$
 * Sorted Single Linked List - already sorted: $O(n)$
 * Sorted Double Linked List - already sorted: $O(n)$
