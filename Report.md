@@ -48,8 +48,12 @@ Since the worst case can change considerably based on what sort you use for sort
 There are a few functions whose worse case is very different than the average case. Name at least two of them, and explain why the worse case is so much worse than the average case. 
 
 1. Binary Search Tree Operations (Add/Remove/Search)
+   
    Average Case: $O(log n)$ 
+   
    Worst Case: $O(n)$
+
+   Binary Search Tree operations (add, remove, and search) achieve $O(log n)$ complexity in the average case when the tree is balanced. However, the worst case degrades to $O(n)$ when inserting already-sorted data like 1, 2, 3, 4, 5, which creates a completely unbalanced tree resembling a linked list. This forces operations to traverse all n nodes instead of just the logarithmic height.
 
 2. 
 
