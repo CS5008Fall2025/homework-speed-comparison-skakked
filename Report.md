@@ -105,15 +105,16 @@ Create *at least three* graphics that each visually explain an aspect of your da
 > 
 > Make sure you can see the image embedded in the Report.md using [image markdown] when you upload it to github, and get help if it doesn't show! 
 
-#### Graphic 1 (Insertion Performance Comparision)
+#### Graphic 1 Insertion Performance Comparision
 ![Insertion Performance Graph](https://github.com/CS5008Fall2025/homework-speed-comparison-skakked/blob/main/Files/Insertion%20Performance%20Comparision.png)
 
 > This graph compares insertion performance for Sorted Vector, Linked List, and BST. The three structures show distinctly different growth patterns. BST maintains a nearly flat line around 0.002 seconds throughout the dataset range. In contrast, both Sorted Vector and Linked List exhibit steep upward curves, reaching approximately 0.16 and 0.15 seconds respectively at N=10,000. The curves for Sorted Vector and Linked List track closely together, suggesting similar algorithmic complexity despite their different underlying structures. The visual separation between BST's flat trajectory and the curved growth of the sequential structures indicates BST scales more favorably as dataset size increases.
 
 
-#### Graphic 2 (Replace with a descriptive title)
+#### Graphic 2 Removal Performance Comparison
+![Removal Performance Graph](https://github.com/CS5008Fall2025/homework-speed-comparison-skakked/blob/main/Files/Removal%20Performance%20Comparision.png)
 
-> Insert your comments/observations about the graphic here
+> This graph illustrates removal performance across the three sorted structures. Three distinct performance tiers are visible: BST maintains a nearly horizontal line at approximately 0.002 seconds, Sorted Vector shows moderate upward growth reaching 0.018 seconds at N=10,000, and Sorted List exhibits the steepest growth curve climbing to 0.20 seconds.
 
 #### Graphic 3 (Replace with a descriptive title)
 
