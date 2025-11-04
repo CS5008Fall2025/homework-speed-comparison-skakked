@@ -136,6 +136,7 @@ For example:
 ```
 
 1. What is the most surprising result from the data? Why is it surprising?
+   The most surprising result is how closely Sorted Vector and Sorted Linked List perform for insertion operations despite their fundamentally different architectures. At N=99,999, Sorted Vector takes 17.75 seconds while Sorted Linked List takes 21.56 seconds—only about 20% difference. The similar performance suggests that the cost of maintaining sorted order (finding the correct position and inserting) dominates over the structural differences between arrays and linked lists at this scale.
 
 2. What data structure is the fast at adding elements (sorted)? Why do you think that is?
 
