@@ -116,9 +116,11 @@ Create *at least three* graphics that each visually explain an aspect of your da
 
 > This graph illustrates removal performance across the three sorted structures. Three distinct performance tiers are visible: BST maintains a nearly horizontal line at approximately 0.002 seconds, Sorted Vector shows moderate upward growth reaching 0.018 seconds at N=10,000, and Sorted List exhibits the steepest growth curve climbing to 0.20 seconds.
 
-#### Graphic 3 (Replace with a descriptive title)
+#### Graphic 3 Search Performance Comparison
+![Removal Performance Graph](https://github.com/CS5008Fall2025/homework-speed-comparison-skakked/blob/main/Files/Search%20Performance%20Comparision.png)
 
-> Insert your comments/observations about the graphic here
+
+> This graph presents search performance across the three structures, revealing the most pronounced performance differences of the three operations. BST and Sorted Vector both produce nearly flat lines that remain close to the x-axis throughout the dataset range, hovering around 0.002 seconds. Linked List search, however, shows a steep linear climb reaching approximately 0.23 seconds at N=10,000.
 
 ## Critical Thought
 
