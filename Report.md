@@ -151,13 +151,11 @@ For example:
 
 4. What data structure is the fastest at searching? Why do you think that is?
 
-   
-
-
-
-   
+   Sorted Vector is fastest at searching, completing lookups in 0.027 seconds at N = 99,999, slightly outperforming the BST’s 0.044 seconds. While both support $O(log n)$ searches, vectors leverage contiguous memory.
 
 5. What data structure is the fastest for adding elements to the front? Why do you think that is?
+
+   
 
 6. What data structure is the fastest for adding elements to the back? Why do you think that is?
 
