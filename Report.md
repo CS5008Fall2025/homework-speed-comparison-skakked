@@ -134,9 +134,11 @@ For example:
 1. What is the most surprising result from the data? Why is it surprising?
    Answer here
 ```
-
+```markdown
 1. What is the most surprising result from the data? Why is it surprising?
+   
    The most surprising result is how closely the Sorted Vector and Sorted Linked List perform for insertion operations, despite their very different internal structures. This is surprising because, in theory, a linked list should benefit from O(1) insertions once the position is found, whereas a vector (array) requires O(n) shifting of elements. However, in both structures, the dominant cost comes from finding the correct sorted position (O(n)), so the structural advantage of the linked list doesn’t meaningfully improve total insertion time at these data sizes.
+```
 
 2. What data structure is the fast at adding elements (sorted)? Why do you think that is?
 
