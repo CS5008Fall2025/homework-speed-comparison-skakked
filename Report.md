@@ -196,9 +196,15 @@ For example:
 
 1. The tests were inherently biased towards the BST to perform better due the setup of the experiment. Explain why this is the case.  (hint: think about the randomization of the data, and the worst case scenario for BST).
 
+   The tests are biased toward BST because the movie data is randomized during insertion. Random insertion order keeps a BST relatively balanced, maintaining $O(log n)$ performance. If movies were inserted in alphabetical order (sorted), the BST would degenerate into a linked list with $O(n)$ operations, performing terribly. The random data order prevents this worst-case scenario.
+
 2. What would generate the worst case scenery for a BST?
 
+   The worst case for BST occurs when data is inserted in sorted order (ascending or descending). For example, inserting movies alphabetically A, B, C, D creates a tree where every node has only a right child, forming a linear chain with height = n. All operations then become $O(n)$ instead of $O(log n)$.
+
 3. Researching beyond the module, how would one fix a BST so the worst case scenario matches (or at least i closer to) the average case.[^1^]
+
+   Self-balancing tree structures solve this problem. AVL trees maintain strict balance through rotations after each insertion/deletion, keeping height difference between subtrees at most 1. Red-Black trees use color properties and rotations to maintain approximate balance with less strict requirements. Both guarantee $O(log n)$ height even with sorted insertions, making worst-case performance match average-case at the cost of more complex insertion/deletion logic.
 
 ## Scenario
 
@@ -206,11 +212,11 @@ Fill out the table below. This is a common technical interview topic!
 
 | Structure          | Good to use when                                                                 | Bad to use when                                                                  |
 | ------------------ | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Vector             |                                                                                  |                                                                                  |
-| Linked List        | Good for stacks with frequent front only access                                  |                                                                                  |
+| Vector             | Need fast random access by index; mostly read operations; data size is known or grows predictably; frequent add/remove from back | Frequent insertions or deletions at front or middle; unpredictable size growth causing many reallocations; memory is fragmented |
+| Linked List        | Good for stacks with frequent front only access                                  | Need random access by index; frequent searching; cache performance is critical; need to frequently access end of list |
 | Sorted Vector      | When values coming in are already mostly sorted and we need quick search access. | When space is limited and the dataset is extremely large causing memory to swap. |
-| Sorted Linked List |                                                                                  |                                                                                  |
-| BST                |                                                                                  | data is presorted                                                                |
+| Sorted Linked List | Need sorted order with frequent insertions/deletions; can't use contiguous memory; don't need fast search performance | Need fast searching (cannot use binary search); performance is critical; random access required; memory overhead is a concern |
+| BST                | Mixed operations (add/search/remove) with random data; need sorted traversal output; data arrives in unpredictable order | data is presorted                                                                |
 
 ## Conclusion
 
