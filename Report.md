@@ -176,11 +176,21 @@ For example:
 
 1. If you wrote your linked list as a single linked list, removing from the back was expensive. If you wrote it as a double linked list, removing from the back was cheap. Why do you think that is?
 
+   In a singly linked list, each node only has a `next` pointer pointing forward to the next node. When removing from the back, even with a tail pointer to access the last node directly, you cannot access the second-to-last node (which needs its `next` pointer set to NULL). This forces a complete traversal from the head through all n-1 nodes to find the node before the tail, making it an O(n) operation. In contrast, a doubly linked list has both `next` and `prev` pointers in each node. With a tail pointer, you can directly access `tail->prev` to get the second-to-last node, update it to become the new tail, and remove the old tail—all in constant $O(1)$ time without any traversal. The tradeoff is that doubly linked lists require extra memory (one additional pointer per node) and slightly more complex insertion/deletion logic to maintain both forward and backward links.
+
 2. When running most functions, at least ~30% of the tests were worse case scenarios. Why do you think that is? 
+
+   With random selection of movies for operations, approximately 30% of items statistically fall in the last third of the data structure. These require near-maximum traversal in linear structures, creating worst-case scenarios. It's a natural result of uniform random distribution across all positions.
 
 3. What was done in the code to encourage that? 
 
+   The code likely uses random movie selection rather than always picking the first element or following a predictable pattern. This could be implemented by generating random indices or shuffling the movie list before operations.
+
 4. How did this particularly influence the linked list searches?
+   
+   For linked lists with 30% of searches targeting the last third, these operations require traversing 70,000-99,999 nodes in a list of 99,999 elements. Since linked lists must check every node sequentially without the ability to skip ahead, this 30% of expensive operations dramatically increases average search time, contributing to the 45+ second search times observed.
+
+
 
 #### Test Bias
 
