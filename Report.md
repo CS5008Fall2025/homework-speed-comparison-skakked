@@ -228,7 +228,15 @@ For both these questions, are you are free to use what you did as the last secti
 
 1. Select one technical interview question (this module or previous) from the [technical interview list](https://github.com/CS5008-khoury/Resources/blob/main/TechInterviewQuestions.md) below and answer it in a few sentences. You can use any resource you like to answer the question.
 
-2. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others. 
+   > Discuss the differences of an array and a linked list. When would you want to use one over the other?
+
+   > An array stores elements in contiguous memory, which allows instant access by index in $O(1)$ time. However, inserting or deleting in the middle is costly because elements must be shifted to keep order. Arrays are efficient when the size is fixed or changes infrequently, and when random access or cache performance matters. A linked list stores elements as nodes connected by pointers. Each node can be anywhere in memory, and access is sequential, taking $O(n)$ time to reach a position. Insertions and deletions are efficient once the position is known since only pointers change. Linked lists are useful when frequent insertions or deletions occur, especially at the front, or when the total size is unknown. We use an array for fast lookups and predictable size, and a linked list for flexible, frequent modifications.
+
+
+
+2. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others.
+
+      
 
 ## References
 
