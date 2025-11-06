@@ -176,7 +176,7 @@ For example:
 
 1. If you wrote your linked list as a single linked list, removing from the back was expensive. If you wrote it as a double linked list, removing from the back was cheap. Why do you think that is?
 
-   In a singly linked list, each node only has a `next` pointer pointing forward to the next node. When removing from the back, even with a tail pointer to access the last node directly, you cannot access the second-to-last node (which needs its `next` pointer set to NULL). This forces a complete traversal from the head through all n-1 nodes to find the node before the tail, making it an O(n) operation. In contrast, a doubly linked list has both `next` and `prev` pointers in each node. With a tail pointer, you can directly access `tail->prev` to get the second-to-last node, update it to become the new tail, and remove the old tail—all in constant $O(1)$ time without any traversal. The tradeoff is that doubly linked lists require extra memory (one additional pointer per node) and slightly more complex insertion/deletion logic to maintain both forward and backward links.
+   In a singly linked list, even with a tail pointer, you cannot access the node before the tail because you can only traverse forward. You must walk through all n-1 nodes from the head to find the second-to-last node to update its next pointer. A doubly linked list has prev pointers, so you can directly access tail->prev, making removal $O(1)$ instead of $O(n)$.
 
 2. When running most functions, at least ~30% of the tests were worse case scenarios. Why do you think that is? 
 
