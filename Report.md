@@ -220,11 +220,7 @@ Fill out the table below. This is a common technical interview topic!
 
 ## Conclusion
 
-> The most striking finding was how the Sorted Vector and Sorted Linked List performed almost identically for insertions despite different architectures, showing that the cost of keeping data sorted outweighs structural differences at this scale. Sorted Vector slightly outperformed the BST in searches, reminding that cache locality can matter more than theory. The extreme slowdown of Sorted Linked List searches, about a thousand times slower than BST, showed the real cost of sequential access.
-
-Front and back operations made the tradeoffs clear. Linked List handled the front in constant time, while Vector struggled with shifting elements. These differences showed how structure directly shapes performance.
-
-Overall, this work turned Big O notation into real timing data. Seeing $O(n)$ take seconds while $O(log n)$ took milliseconds showed why algorithmic complexity drives design choices. Even data structures with the same complexity can behave very differently in practice, depending on operation mix and access patterns.
+> The most striking finding was how the Sorted Vector and Sorted Linked List performed almost identically for insertions despite different architectures, showing that the cost of keeping data sorted outweighs structural differences at this scale. Sorted Vector slightly outperformed the BST in searches, reminding that cache locality can matter more than theory. The extreme slowdown of Sorted Linked List searches, about a thousand times slower than BST, showed the real cost of sequential access. Front and back operations made the tradeoffs clear. Linked List handled the front in constant time, while Vector struggled with shifting elements. These differences showed how structure directly shapes performance.
 
 ## Technical Interview Practice Questions
 
