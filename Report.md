@@ -16,7 +16,7 @@ for the SortedVector and SortedList, you should use the Big O for the functions 
 the homework. Both Single and Double Linked List you can assume head and tail pointers are available. 
 Don't forget to use latex math notation (example in the table).
 
-### Big $O$ Table
+### Big $O$ Table [1,2]
 
 | -                         | Add/Insert        | Remove            | Search/Find       | Sort              | Add Front    | Add Back     | Remove Front | Remove Back  | Get by Index |
 | ------------------------- |:-----------------:|:-----------------:|:-----------------:|:-----------------:|:------------:|:------------:|:------------:|:------------:|:------------:|
@@ -35,9 +35,9 @@ For Sort, we are asking for the Big $O$ for taking the current data structure an
 
 Since the worst case can change considerably based on what sort you use for sorting (if any), list each algorithm below, and specify the algorithm used in your assumption.  For BST, write which  method of traversal you would use to sort it.  
 
-* Vector: $O(nlogn)$ (mergesort)
-* Single Linked List: $O(n log n)$ (mergesort)
-* Double Linked List: $O(n log n)$ (mergesort)
+* Vector: $O(nlogn)$ (mergesort)[2]
+* Single Linked List: $O(n log n)$ (mergesort)[2]
+* Double Linked List: $O(n log n)$ (mergesort)[2]
 * Sorted Vector - already sorted: $O(n)$
 * Sorted Single Linked List - already sorted: $O(n)$
 * Sorted Double Linked List - already sorted: $O(n)$
@@ -53,7 +53,7 @@ There are a few functions whose worse case is very different than the average ca
    
    Worst Case: $O(n)$
 
-   Binary Search Tree operations (add, remove, and search) achieve $O(log n)$ complexity in the average case when the tree is balanced. However, the worst case slows to $O(n)$ when inserting already-sorted data like 1, 2, 3, 4, 5, which creates a completely unbalanced tree resembling a linked list. This causes operations to traverse all n nodes instead of just the logarithmic height.
+   Binary Search Tree operations (add, remove, and search) achieve $O(log n)$ complexity in the average case when the tree is balanced. However, the worst case slows to $O(n)$ when inserting already-sorted data like 1, 2, 3, 4, 5, which creates a completely unbalanced tree resembling a linked list. This causes operations to traverse all n nodes instead of just the logarithmic height.[1,3]
 
 2. Quicksort 
 
@@ -61,7 +61,7 @@ There are a few functions whose worse case is very different than the average ca
 
    Worst Case: $O(n^2)$
 
-   When the pivot selections result in relatively balanced partitions, the recursion tree has logarithmic depth with O(n) work at each level and when the pivot is consistently the smallest or largest element, the partitions become extremely unbalanced. This creates a recursion depth of n with O(n) work at each level, resulting in quadratic time.
+   When the pivot selections result in relatively balanced partitions, the recursion tree has logarithmic depth with O(n) work at each level and when the pivot is consistently the smallest or largest element, the partitions become extremely unbalanced. This creates a recursion depth of n with O(n) work at each level, resulting in quadratic time.[1,2]
 
 
 ## Empirical Analysis - Speed Comparison
@@ -176,7 +176,7 @@ For example:
 
 1. If you wrote your linked list as a single linked list, removing from the back was expensive. If you wrote it as a double linked list, removing from the back was cheap. Why do you think that is?
 
-   In a singly linked list, even with a tail pointer, you cannot access the node before the tail because you can only traverse forward. You must walk through all n-1 nodes from the head to find the second-to-last node to update its next pointer. A doubly linked list has prev pointers, so you can directly access tail->prev, making removal $O(1)$ instead of $O(n)$.
+   In a singly linked list, even with a tail pointer, you cannot access the node before the tail because you can only traverse forward. You must walk through all n-1 nodes from the head to find the second-to-last node to update its next pointer. A doubly linked list has prev pointers, so you can directly access tail->prev, making removal $O(1)$ instead of $O(n)$.[1]
 
 2. When running most functions, at least ~30% of the tests were worse case scenarios. Why do you think that is? 
 
@@ -196,15 +196,15 @@ For example:
 
 1. The tests were inherently biased towards the BST to perform better due the setup of the experiment. Explain why this is the case.  (hint: think about the randomization of the data, and the worst case scenario for BST).
 
-   The tests are biased toward BST because the movie data is randomized during insertion. Random insertion order keeps a BST relatively balanced, maintaining $O(log n)$ performance. If movies were inserted in alphabetical order (sorted), the BST would degenerate into a linked list with $O(n)$ operations, performing terribly. The random data order prevents this worst-case scenario.
+   The tests are biased toward BST because the movie data is randomized during insertion. Random insertion order keeps a BST relatively balanced, maintaining $O(log n)$ performance. If movies were inserted in alphabetical order (sorted), the BST would degenerate into a linked list with $O(n)$ operations, performing terribly. The random data order prevents this worst-case scenario.[3]
 
 2. What would generate the worst case scenery for a BST?
 
-   The worst case for BST occurs when data is inserted in sorted order (ascending or descending). For example, inserting movies alphabetically A, B, C, D creates a tree where every node has only a right child, forming a linear chain with height = n. All operations then become $O(n)$ instead of $O(log n)$.
+   The worst case for BST occurs when data is inserted in sorted order (ascending or descending). For example, inserting movies alphabetically A, B, C, D creates a tree where every node has only a right child, forming a linear chain with height = n. All operations then become $O(n)$ instead of $O(log n)$. [2,3
 
 3. Researching beyond the module, how would one fix a BST so the worst case scenario matches (or at least i closer to) the average case.[^1^]
 
-   Self-balancing tree structures solve this problem. AVL trees maintain strict balance through rotations after each insertion/deletion, keeping height difference between subtrees at most 1. Red-Black trees use color properties and rotations to maintain approximate balance with less strict requirements. Both guarantee $O(log n)$ height even with sorted insertions, making worst-case performance match average-case at the cost of more complex insertion/deletion logic.
+   Self-balancing tree structures solve this problem. AVL trees maintain strict balance through rotations after each insertion/deletion, keeping height difference between subtrees at most 1. Red-Black trees use color properties and rotations to maintain approximate balance with less strict requirements. Both guarantee $O(log n)$ height even with sorted insertions, making worst-case performance match average-case at the cost of more complex insertion/deletion logic.[4-6]
 
 ## Scenario
 
@@ -230,7 +230,7 @@ For both these questions, are you are free to use what you did as the last secti
 
    > Discuss the differences of an array and a linked list. When would you want to use one over the other?
 
-   > An array stores elements in contiguous memory, which allows instant access by index in $O(1)$ time. However, inserting or deleting in the middle is costly because elements must be shifted to keep order. Arrays are efficient when the size is fixed or changes infrequently, and when random access or cache performance matters. A linked list stores elements as nodes connected by pointers. Each node can be anywhere in memory, and access is sequential, taking $O(n)$ time to reach a position. Insertions and deletions are efficient once the position is known since only pointers change. Linked lists are useful when frequent insertions or deletions occur, especially at the front, or when the total size is unknown. We use an array for fast lookups and predictable size, and a linked list for flexible, frequent modifications.
+   > An array stores elements in contiguous memory, which allows instant access by index in $O(1)$ time. However, inserting or deleting in the middle is costly because elements must be shifted to keep order. Arrays are efficient when the size is fixed or changes infrequently, and when random access or cache performance matters. A linked list stores elements as nodes connected by pointers. Each node can be anywhere in memory, and access is sequential, taking $O(n)$ time to reach a position. Insertions and deletions are efficient once the position is known since only pointers change. Linked lists are useful when frequent insertions or deletions occur, especially at the front, or when the total size is unknown. We use an array for fast lookups and predictable size, and a linked list for flexible, frequent modifications.[7]
 
 
 
@@ -242,7 +242,12 @@ For both these questions, are you are free to use what you did as the last secti
 
 Add your references here. A good reference includes an inline citation, such as [1] , and then down in your references section, you include the full details of the reference. Computer Science research often uses [IEEE] or [ACM Reference format].
 
-[1] Reference info, date, etc.
+[1] T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, Introduction to Algorithms, 4th ed. Cambridge, MA: MIT Press, 2022.
+[2] R. Sedgewick and K. Wayne, Algorithms, 4th ed. Boston, MA: Addison-Wesley Professional, 2011.
+[4] G. Adelson-Velsky and E. M. Landis, "An algorithm for the organization of information," Soviet Mathematics Doklady, vol. 3, pp. 1259-1263, 1962.
+[5] R. Bayer, "Symmetric binary B-Trees: Data structure and maintenance algorithms," Acta Informatica, vol. 1, no. 4, pp. 290-306, 1972.
+[6] L. J. Guibas and R. Sedgewick, "A dichromatic framework for balanced trees," in Proceedings of the 19th Annual Symposium on Foundations of Computer Science, Ann Arbor, MI, 1978, pp. 8-21.
+[7] Y. Peng, "Chapter 3. Data Structures," *Medium*, 2021. Available: https://yangpeng-tech.medium.com/chapter-3-data-structures-380033314cd8. [Accessed: Nov. 5, 2025].
 
 [^1^]: Implementing a BST with a self-balancing algorithm, such as AVL or Red-Black Trees is a great research paper topic!
 
