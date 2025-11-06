@@ -216,11 +216,15 @@ Fill out the table below. This is a common technical interview topic!
 | Linked List        | Good for stacks with frequent front only access                                  | Need random access by index; frequent searching; cache performance is critical; need to frequently access end of list |
 | Sorted Vector      | When values coming in are already mostly sorted and we need quick search access. | When space is limited and the dataset is extremely large causing memory to swap. |
 | Sorted Linked List | Need sorted order with frequent insertions/deletions; can't use contiguous memory; don't need fast search performance | Need fast searching (cannot use binary search); performance is critical; random access required; memory overhead is a concern |
-| BST                | Mixed operations (add/search/remove) with random data; need sorted traversal output; data arrives in unpredictable order | data is presorted                                                                |
+| BST                | Mixed operations (add/search/remove) with random data; need sorted traversal output; data arrives in unpredictable order | Data is presorted                                                                |
 
 ## Conclusion
 
-Summarize your findings. Where there any surprises?  What did you end up learning by comparing speeds?
+> The most striking finding was how the Sorted Vector and Sorted Linked List performed almost identically for insertions despite different architectures, showing that the cost of keeping data sorted outweighs structural differences at this scale. Sorted Vector slightly outperformed the BST in searches, reminding that cache locality can matter more than theory. The extreme slowdown of Sorted Linked List searches, about a thousand times slower than BST, showed the real cost of sequential access.
+
+Front and back operations made the tradeoffs clear. Linked List handled the front in constant time, while Vector struggled with shifting elements. These differences showed how structure directly shapes performance.
+
+Overall, this work turned Big O notation into real timing data. Seeing $O(n)$ take seconds while $O(log n)$ took milliseconds showed why algorithmic complexity drives design choices. Even data structures with the same complexity can behave very differently in practice, depending on operation mix and access patterns.
 
 ## Technical Interview Practice Questions
 
